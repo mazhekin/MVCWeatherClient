@@ -1,4 +1,5 @@
 MVCWeatherClient
 ================
 
-Client to consume weather service.
+ASP.NET MVC 4 web client to consume weather service.
+ 

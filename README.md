@@ -1,4 +1,4 @@
 MVCWeatherClient
 ================
 
-Client to consume weather client.
+Client to consume weather service.

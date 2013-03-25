@@ -1,0 +1,7 @@
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\bin\Debug\App.Core.Tests.Integration.dll
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\bin\Debug\App.Core.Tests.Integration.pdb
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\bin\Debug\App.Core.dll
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\bin\Debug\App.Core.pdb
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\obj\Debug\App.Core.Tests.Integration.csprojResolveAssemblyReference.cache
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\obj\Debug\App.Core.Tests.Integration.dll
+D:\!virtoway\WeatherSolution\App.Core.Tests.Integration\obj\Debug\App.Core.Tests.Integration.pdb

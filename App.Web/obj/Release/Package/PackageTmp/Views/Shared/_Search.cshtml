@@ -1,0 +1,12 @@
+﻿
+@using (Html.BeginForm("index", "search", FormMethod.Get))
+{
+    <fieldset>
+        <div>
+            <label>Enter City/Town:</label>
+            @Html.TextBox("q")
+        </div>
+        <input type="submit" value="Search" />
+    </fieldset>
+
+}

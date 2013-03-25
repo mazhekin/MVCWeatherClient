@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Weather - Search Location";
+    var results = ViewBag.Results as IList<App.Core.Models.Location>;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.Partial("_Search")
+
+@if (results != null)
+{
+    if (results.Any())
+    {
+        <h3>Search results</h3>
+        <ul>
+            @foreach (var location in results)
+            {
+            <li>
+                <a href="@Url.Action("index", "weather", new { point = location.Point })">
+                    @location.City, @location.Country@(String.IsNullOrWhiteSpace(location.State) ? "" : ", " + location.State)
+                </a>
+            </li>
+            }
+        </ul>
+    } else {
+        <h3>There are no search results</h3>
+    }
+}

@@ -1,0 +1,4 @@
+D:\!virtoway\WeatherSolution\App.Core\bin\Release\App.Core.dll
+D:\!virtoway\WeatherSolution\App.Core\bin\Release\App.Core.pdb
+D:\!virtoway\WeatherSolution\App.Core\obj\Release\App.Core.dll
+D:\!virtoway\WeatherSolution\App.Core\obj\Release\App.Core.pdb

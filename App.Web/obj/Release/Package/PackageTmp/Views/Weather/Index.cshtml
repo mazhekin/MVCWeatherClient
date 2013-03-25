@@ -1,0 +1,36 @@
+﻿@model App.Core.Models.Location
+
+@{
+    ViewBag.Title = "Weather: " + Model.City + ", " + Model.Country + (String.IsNullOrWhiteSpace(Model.State) ? "" : ", " + Model.State);
+    var forcasts = (IList<App.Core.Models.Forecast>)ViewBag.Forecasts;
+}
+
+<style>
+    img.icon {
+        float:left;
+        margin: 7px 7px 7px 0;
+    }
+
+    ul.forecast {
+        list-style: none;
+    }
+
+    ul.forecast li {
+        border-bottom: 2px solid gray;
+    }
+</style>
+
+<h2>@ViewBag.Title</h2>
+
+<ul class="forecast">
+@foreach (var forecast in forcasts)
+{
+    <li>
+        <img src="@forecast.Icon" alt ="@forecast.Title" class="icon" />
+        <h3>@forecast.Title</h3>
+        <p>
+            @forecast.Text
+        </p>
+    </li>
+}
+</ul>

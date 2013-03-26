@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Weather: " + Model.City + ", " + Model.Country + (String.IsNullOrWhiteSpace(Model.State) ? "" : ", " + Model.State);
-    var forcasts = (IList<App.Core.Models.Forecast>)ViewBag.Forecasts;
+    var forcasts = Model.Forecasts;
 }
 
 <style>

@@ -2,6 +2,7 @@
 using App.Core.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,8 +23,7 @@ namespace App.Web.Controllers
 
         public ActionResult Index(string point)
         {
-            Location location;
-            ViewBag.Forecasts = this.weatherService.GetForecast(point, out location);
+            var location = this.weatherService.GetForecast(point);
             return View(location);
         }
 

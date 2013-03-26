@@ -12,5 +12,7 @@ namespace App.Core.Models
         public string Country { get; set; }
         public string State { get; set; }
         public string Point { get; set; }
+
+        public IList<Forecast> Forecasts { get; set; }
     }
 }

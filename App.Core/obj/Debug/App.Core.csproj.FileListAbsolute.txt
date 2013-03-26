@@ -2,7 +2,6 @@ D:\!virtoway\WeatherSolution\App.Core\bin\Debug\App.Core.dll
 D:\!virtoway\WeatherSolution\App.Core\bin\Debug\App.Core.pdb
 D:\!virtoway\WeatherSolution\App.Core\obj\Debug\App.Core.dll
 D:\!virtoway\WeatherSolution\App.Core\obj\Debug\App.Core.pdb
-D:\!virtoway\WeatherSolution\App.Core\obj\Debug\App.Core.csprojResolveAssemblyReference.cache
 D:\Git\WeatherSolution\App.Core\bin\Debug\App.Core.dll
 D:\Git\WeatherSolution\App.Core\bin\Debug\App.Core.pdb
 D:\Git\WeatherSolution\App.Core\obj\Debug\App.Core.csprojResolveAssemblyReference.cache

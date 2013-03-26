@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core", "App.Core\App.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core.Tests.Integration", "App.Core.Tests.Integration\App.Core.Tests.Integration.csproj", "{5D496CF4-A314-49E0-B070-DAF76DCEABF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Web.Tests", "App.Web.Tests\App.Web.Tests.csproj", "{4530EB73-0AA5-4F4E-90D0-56145626D85A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utit Tests", "Utit Tests", "{EEFC8658-FD1A-47B1-B402-4F11779E6774}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,9 +29,17 @@ Global
 		{5D496CF4-A314-49E0-B070-DAF76DCEABF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D496CF4-A314-49E0-B070-DAF76DCEABF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D496CF4-A314-49E0-B070-DAF76DCEABF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4530EB73-0AA5-4F4E-90D0-56145626D85A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4530EB73-0AA5-4F4E-90D0-56145626D85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4530EB73-0AA5-4F4E-90D0-56145626D85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4530EB73-0AA5-4F4E-90D0-56145626D85A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D496CF4-A314-49E0-B070-DAF76DCEABF4} = {EEFC8658-FD1A-47B1-B402-4F11779E6774}
+		{4530EB73-0AA5-4F4E-90D0-56145626D85A} = {EEFC8658-FD1A-47B1-B402-4F11779E6774}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35

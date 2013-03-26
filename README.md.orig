@@ -1,0 +1,9 @@
+MVCWeatherClient
+================
+
+<<<<<<< HEAD
+ASP.NET MVC 4 web client to consume weather service.
+ 
+=======
+Client to consume weather service.
+>>>>>>> second commit

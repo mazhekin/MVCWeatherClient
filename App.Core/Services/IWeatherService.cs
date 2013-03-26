@@ -10,6 +10,9 @@ namespace App.Core.Services
     public interface IWeatherService
     {
         IList<Location> SearchLocations(string query);
-        IList<Forecast> GetForecast(string point, out Location location);
+        Task<IList<Models.Location>> SearchLocationsAsync(string query);
+
+        Location GetForecast(string point);
+        Task<Location> GetForecastAsync(string point);
     }
 }

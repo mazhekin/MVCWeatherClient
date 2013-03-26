@@ -3,9 +3,9 @@ using App.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 
 namespace App.Core.Services
 {
@@ -70,7 +70,7 @@ namespace App.Core.Services
                 Point = location.zmw
             };
 
-            // fix
+            // fix for non USA towns
             if (!String.IsNullOrWhiteSpace(location.tz_long))
             {
                 loc.Point = location.tz_long;
@@ -95,13 +95,9 @@ namespace App.Core.Services
             };
         }
 
-        IList<Models.Location> IWeatherService.SearchLocations(string query)
+        private IList<Models.Location> getSearchLocations(string data)
         {
-            var address = String.Format(serviceAddress + geolookupTemplate, query); 
-            var response = HTTPReader.Load(address);
-
-            var serializer = new JavaScriptSerializer();
-            var geoLookupObject = serializer.Deserialize<GeoLookup>(response);
+            var geoLookupObject = data.DeserializeJson<GeoLookup>();
 
             if (geoLookupObject.response.results != null)
             {
@@ -117,17 +113,46 @@ namespace App.Core.Services
             return new List<Models.Location>();
         }
 
-        IList<Models.Forecast> IWeatherService.GetForecast(string point, out Location location)
+        async Task<IList<Models.Location>> IWeatherService.SearchLocationsAsync(string query)
+        {
+            var address = String.Format(serviceAddress + geolookupTemplate, query);
+            var response = await HTTPReader.LoadAsync(address);
+
+            return this.getSearchLocations(response);
+        }
+
+        IList<Models.Location> IWeatherService.SearchLocations(string query)
+        {
+            var address = String.Format(serviceAddress + geolookupTemplate, query); 
+            var response = HTTPReader.Load(address);
+
+            return this.getSearchLocations(response);
+        }
+
+        private Location getForcasts(string data)
+        {
+            var forecastObject = data.DeserializeJson<ForecastObject>();
+
+            var location = this.ToLocation(forecastObject.location);
+            location.Forecasts = forecastObject.forecast.txt_forecast.forecastday.Select(x => this.ToForecast(x)).ToList();
+
+            return location;
+        }
+
+        Location IWeatherService.GetForecast(string point)
         {
             var address = String.Format(serviceAddress + forecastTemplate, point);
             var response = HTTPReader.Load(address);
 
-            var serializer = new JavaScriptSerializer();
-            var forecastObject = serializer.Deserialize<ForecastObject>(response);
+            return this.getForcasts(response);
+        }
 
-            location = this.ToLocation(forecastObject.location);
+        async Task<Location> IWeatherService.GetForecastAsync(string point)
+        {
+            var address = String.Format(serviceAddress + forecastTemplate, point);
+            var response = await HTTPReader.LoadAsync(address);
 
-            return forecastObject.forecast.txt_forecast.forecastday.Select(x => this.ToForecast(x)).ToList();
+            return this.getForcasts(response);
         }
     }
 }

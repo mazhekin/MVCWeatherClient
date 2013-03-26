@@ -4,6 +4,7 @@ using App.Core.Data;
 using App.Core.Services;
 using System.Linq;
 using App.Core.Models;
+using System.Threading.Tasks;
 
 namespace App.Core.Tests.Integration.Services
 {
@@ -19,7 +20,7 @@ namespace App.Core.Tests.Integration.Services
         }
 
         [TestMethod]
-        public void GetSearchResults_Returns_Results_For_Search_Query()
+        public void GetLocations_Returns_Results_For_Search_Query()
         {
             // Act
             var resultsAllentown = this.weatherService.SearchLocations("Allentown");
@@ -28,8 +29,7 @@ namespace App.Core.Tests.Integration.Services
             Assert.AreEqual(resultsAllentown.Count, 4);
 
             // Act
-            Location locationAllentown;
-            var forecastAllentown = this.weatherService.GetForecast(resultsAllentown.First().Point, out locationAllentown); 
+            var locationAllentown = this.weatherService.GetForecast(resultsAllentown.First().Point); 
 
             // Assert
             Assert.AreEqual(locationAllentown.City, "Allentown");
@@ -42,9 +42,29 @@ namespace App.Core.Tests.Integration.Services
             Assert.AreEqual(resultsKaliningrad.Count, 1);
 
             // Act
-            Location locationKaliningrad;
-            var forecastKaliningrad = this.weatherService.GetForecast(resultsKaliningrad.First().Point, out locationKaliningrad); 
+            var locationKaliningrad = this.weatherService.GetForecast(resultsKaliningrad.First().Point); 
 
         }
+
+        [TestMethod]
+        public void GetLocationsAsync_Returns_Results_For_Search_Query()
+        {
+            // Act
+            var resultsAllentown = this.weatherService.SearchLocationsAsync("Allentown");
+
+            Task.WaitAll(resultsAllentown);
+
+            // Assert
+            Assert.AreEqual(resultsAllentown.Result.Count, 4);
+
+            // Act
+            var locationAllentown = this.weatherService.GetForecastAsync(resultsAllentown.Result.First().Point);
+
+            Task.WaitAll(locationAllentown);
+
+            //Assert
+            Assert.AreEqual(locationAllentown.Result.City, "Allentown");
+        }
+
     }
 }

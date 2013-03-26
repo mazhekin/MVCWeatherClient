@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Core.Tests.Integration"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Web.Tests", "App.Web.Tests\App.Web.Tests.csproj", "{4530EB73-0AA5-4F4E-90D0-56145626D85A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utit Tests", "Utit Tests", "{EEFC8658-FD1A-47B1-B402-4F11779E6774}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{EEFC8658-FD1A-47B1-B402-4F11779E6774}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

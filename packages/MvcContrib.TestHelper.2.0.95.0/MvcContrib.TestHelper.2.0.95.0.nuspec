@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>MvcContrib.TestHelper</id>
+    <version>2.0.95.0</version>
+    <title>MvcContrib TestHelper</title>
+    <authors>Outercurve Foundation</authors>
+    <owners>Outercurve Foundation</owners>
+    <licenseUrl>http://mvccontrib.codeplex.com/license</licenseUrl>
+    <projectUrl>http://mvccontrib.codeplex.com/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The TestHelper library allows simpler unit testing on Asp.net MVC controllers than can be accomplished through standard mocking and subclassing. It is designed to reduce the amount of work required to test controllers, and therefore should be used by your test projects but not in your web server project.</description>
+    <summary>Allows simpler unit testing on Asp.net MVC controllers</summary>
+    <releaseNotes />
+    <copyright />
+    <language>en-GB</language>
+    <tags>mvccontrib unit test</tags>
+    <dependencies>
+      <dependency id="MvcContrib" version="2.0.95.0" />
+      <dependency id="RhinoMocks" version="3.6" />
+    </dependencies>
+    <references>
+      <reference file="MvcContrib.TestHelper.dll" />
+    </references>
+  </metadata>
+</package>
